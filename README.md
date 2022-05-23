@@ -7,7 +7,9 @@ PyOura is a python client for [Oura](https://github.com/txpipe/oura).
 
 ### Prerequisite
 
-* An endpoint of a cardano node.
+* Oura binary is installed on local machine. 
+See installation instruction [here](https://txpipe.github.io/oura/installation/binary_release.html).
+* An endpoint of a Cardano node.
 
 ### Start oura 
 
