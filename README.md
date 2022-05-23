@@ -28,15 +28,15 @@ cardano_node_endpoint = "localhost:3001"
     
 start(cardano_node_endpoint, 
       handler=handle_event, 
-      events=[Event.Transaction, Event.RollBack],
-      host="0.0.0.0",
-      port=9000)
+      events=[Event.Transaction, Event.RollBack])
 ```
 
 Start oura
 ```shell
 python3 start.py
 ```
+
+The command above will start an oura process and a bottle server that responds to blockchain events emitted by oura.
 
 You will see logs from oura server like below:
 ```shell
@@ -85,9 +85,7 @@ from oura import set_cursor, Cursor
 slot = 61716365
 block_hash_at_slot = "b7c92be36e0d3db13078913850cec630683e327ac42e3962f261791e979b7cf0"
 start_from = Cursor(slot, block_hash_at_slot)
-set_cursor(start_from, 
-           host="0.0.0.0",
-           port=9000)
+set_cursor(start_from)
 ```
 
 `set_cursor` will restart oura and have it read from the specified point in the chain.
